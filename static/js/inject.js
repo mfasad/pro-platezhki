@@ -38,3 +38,15 @@ ym(110228642,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   addDisclaimerLink();
   addArticleNotice();
 })();
+
+// VideoRoll — Под текстом статьи, перед похожими
+(function(){
+    var target = document.querySelector('.article-body') || document.querySelector('.pb-article-body');
+    if (!target) return;
+
+    // Ad container
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'margin:20px 0;text-align:center';
+    wrap.innerHTML = '<div id="vid_vpaut_div" style="display:inline-block;width:600px;height:320px" vid_vpaut_pl="47827"></div>';
+    target.parentNode.insertBefore(wrap, target.nextSibling);
+})();
