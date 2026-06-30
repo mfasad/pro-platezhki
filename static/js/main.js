@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loadChunk(prefix, function(data) {
                 var words = q.split(/\s+/);
                 var results = data.filter(function(item) {
+                    if (document.body.classList.contains('pp-home') && /\b(?:19|20)\d{2}\b/.test(item.t)) return false;
                     return words.every(function(w) {
                         return item.tl.indexOf(w) !== -1 || item.sl.indexOf(w) !== -1;
                     });
